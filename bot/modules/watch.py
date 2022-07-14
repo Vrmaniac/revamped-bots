@@ -26,7 +26,7 @@ def _watch(bot, message, isZip=False, isLeech=False, multi=0):
             uname = message.from_user.mention_html(message.from_user.first_name)
             user = bot.get_chat_member(FSUB_CHANNEL_ID, message.from_user.id)
             if user.status not in ['member', 'creator', 'administrator']:
-                buttons.buildbutton("Z Mirrror", f"https://t.me/{CHANNEL_USERNAME}")
+                buttons.buildbutton("Mr. X Mirror World", f"https://t.me/{CHANNEL_USERNAME}")
                 reply_markup = InlineKeyboardMarkup(buttons.build_menu(1))
                 return sendMarkup(f"<b>Dear {uname}️,\nYou haven't joined our Updates Channel yet.\nJoin and <u>Use Bots Without Restrictions.</u></b>", bot, message, reply_markup)
         except Exception as e:
@@ -45,7 +45,7 @@ def _watch(bot, message, isZip=False, isLeech=False, multi=0):
             botstart = f"http://t.me/{b_uname}"
             buttons.buildbutton("Click Here to Start Me", f"{botstart}")
             startwarn = f"Dear {uname},\n\n<b>I found that you haven't started me in PM (Private Chat) yet.</b>\n\n" \
-                        f"From now on i will give link and leeched files in PM and log channel only"
+                        f"From now on i will give link and leeched files in PM only"
             message = sendMarkup(startwarn, bot, message, InlineKeyboardMarkup(buttons.build_menu(2)))
             Thread(target=auto_delete_message, args=(bot, message, message)).start()
             return
